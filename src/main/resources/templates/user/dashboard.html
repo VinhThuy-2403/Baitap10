@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/user/dashboard">User Dashboard</a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3" th:text="'Xin chào, ' + ${user.username}">Xin chào</span>
+                <a class="btn btn-outline-light" href="/logout">Đăng xuất</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Trang chủ User</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <h4>Chào mừng bạn đến với trang User!</h4>
+                            <p>Đây là trang dành cho người dùng thông thường.</p>
+                            <p>Bạn có thể xem thông tin cá nhân và sử dụng các tính năng dành cho user.</p>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Thông tin cá nhân</h5>
+                                        <p><strong>Username:</strong> <span th:text="${user.username}">username</span></p>
+                                        <p><strong>Email:</strong> <span th:text="${user.email}">email</span></p>
+                                        <p><strong>Role:</strong> <span th:text="${user.role}">role</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Tính năng</h5>
+                                        <ul>
+                                            <li>Xem thông tin cá nhân</li>
+                                            <li>Quản lý tài khoản</li>
+                                            <li>Sử dụng các dịch vụ</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
